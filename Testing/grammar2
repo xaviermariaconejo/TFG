@@ -1,0 +1,23 @@
+%scanner				Scanner.h
+%scanner-token-function d_scanner.lex()
+%token IDE NUMBER CHAR
+
+%%
+
+startrule:
+	startrule tokenshow
+|
+	tokenshow
+;
+
+tokenshow:
+	token
+;
+
+token:
+	IDE { std::cout << "IDE : " << d_scanner.matched() << '\n'; }
+|
+	NUMBER { std::cout << "NUMBER : " << d_scanner.matched() << '\n'; }
+|
+	CHAR { std::cout << "CHAR : " << d_scanner.matched() << '\n'; }
+;

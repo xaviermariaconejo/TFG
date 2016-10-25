@@ -1,0 +1,7 @@
+%class-name Scanner
+
+%%
+
+[[:alpha:]_][[:alnum:]_]*	return 1;
+\n							return '\n';
+.

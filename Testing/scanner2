@@ -1,0 +1,5 @@
+%%
+[0-9]+								return Parser::NUMBER;
+[[:alpha:]_][[:alpha:][:digit:]_]*	return Parser::IDE;
+.									return Parser::CHAR;
+[ \t\n]+							//skip white space chars
